@@ -1,31 +1,26 @@
 #include <iostream>
+#include "science.cpp"
+#include "basic.cpp"
 
-int main() {
-    float a, b;
-    char operation;
-    std::cout << "Enter your type of operation (+, -, *, /) : ";
-    std::cin >> operation;
-    std::cout << "Enter your first number: ";
-    std::cin >> a;
-    std::cout << "Enter your second number: ";
-    std::cin >> b;
+int main()
+{
+    int type;
 
-    switch (operation)
+    std::cout << "Enter you type of calculator\n"
+              << "1.Basic Calculator\n"
+              << "2.Science Calculator\n"
+              << "Enter:";
+    std::cin >> type;
+
+    switch (type)
     {
-    case '+':
-    std::cout << "Result is: " << a+b << "\n";
-        break;
-    case '-':
-    std::cout << "Result is: " << a-b << "\n";
+    case 1:
+    basic_calculator();
     break;
-    case '*':
-    std::cout << "Result is: " << a*b << "\n";
-    break;
-    case '/':
-    std::cout << "Result is: " << a/b << "\n";
-    break;
-    default:
-    std::cout << "You can only use   + - * /   for operation only!\n";
-        break;
+    
+    case 2:
+    science_calculator();
     }
+
+    return 0;
 }
